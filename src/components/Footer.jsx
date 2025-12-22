@@ -1,85 +1,104 @@
+import { memo } from "react";
 import { motion } from "framer-motion";
 import { Code2, Heart, Mail } from "lucide-react";
 import logo from "../assets/logo.png";
 
+/* ---------------- Animations ---------------- */
+const fadeUp = {
+  hidden: { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0 },
+};
+
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-gray-800">
+    <footer
+      className="border-t border-gray-800"
+      role="contentinfo"
+      aria-label="Site footer"
+    >
       <div className="container mx-auto px-4 py-12">
-        <div className="flex flex-col lg:flex-row items-center justify-between space-y-6 lg:space-y-0">
-          {/* Logo and Copyright */}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
+          {/* Brand */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="flex items-center space-x-3"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="flex items-center gap-3 text-gray-400"
           >
-            <Code2 className="w-6 h-6 text-primary-400" />
-            <img width={20} src={logo} alt="suresh"/>
+            <Code2 aria-hidden className="w-6 h-6 text-primary-400" />
+            <img
+              src={logo}
+              width={20}
+              height={20}
+              alt="Suresh logo"
+              loading="lazy"
+            />
             <span className="text-lg font-bold text-gradient">Suresh</span>
-            <span className="text-gray-400">•</span>
-            <span className="text-gray-400 text-sm">
-              © {currentYear} All rights reserved.
-            </span>
+            <span aria-hidden>•</span>
+            <span className="text-sm">© {year} All rights reserved.</span>
           </motion.div>
 
           {/* Made with love */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="flex items-center space-x-2 text-gray-400"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ delay: 0.15 }}
+            className="flex items-center gap-2 text-gray-400"
+            aria-label="Made with love"
           >
             <span>Made with</span>
-            <motion.div
-              animate={{
-                scale: [1, 1.2, 1],
-              }}
+            <motion.span
+              aria-hidden
+              animate={{ scale: [1, 1.15, 1] }}
               transition={{
-                duration: 1.5,
+                duration: 1.4,
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
             >
               <Heart className="w-4 h-4 text-red-500 fill-current" />
-            </motion.div>
+            </motion.span>
             <span>by Suresh</span>
           </motion.div>
 
-          {/* Quick Contact */}
+          {/* Contact */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="flex items-center space-x-4"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
           >
-            <motion.a
+            <a
               href="mailto:suresh02.jrs@gmail.com"
-              whileHover={{ scale: 1.1 }}
-              className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors"
+              className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
+              aria-label="Email Suresh"
             >
-              <Mail className="w-4 h-4" />
+              <Mail aria-hidden className="w-4 h-4" />
               <span className="text-sm">Get in touch</span>
-            </motion.a>
+            </a>
           </motion.div>
         </div>
 
-        {/* Bottom Text */}
-        <motion.div
+        {/* Bottom text */}
+        <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-          className="text-center mt-8 pt-8 border-t border-gray-800"
+          viewport={{ once: true }}
+          transition={{ delay: 0.45 }}
+          className="text-center mt-8 pt-8 border-t border-gray-800 text-gray-500 text-sm"
         >
-          <p className="text-gray-500 text-sm">
-            Ready to start your next project? Let's build something amazing
-            together! 🚀
-          </p>
-        </motion.div>
+          Ready to start your next project? Let’s build something amazing
+          together! 🚀
+        </motion.p>
       </div>
     </footer>
   );
 };
 
-export default Footer;
+export default memo(Footer);
