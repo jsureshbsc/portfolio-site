@@ -184,6 +184,25 @@ const Contact = () => {
                 <p className="text-sm text-gray-300">{PHONE}</p>
               </motion.div>
             </a>
+            <a
+              href="https://wa.me/916369263611?text=Hi%20Suresh%2C%20I%20need%20a%20website"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="whatsapp-button" 
+            >
+              <motion.div
+                variants={slideLeft}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="p-5 glass-effect rounded-xl"
+              >
+                {" "}
+                <MessageCircle aria-hidden className="w-6 h-6 text-white mb-2" />
+                <p className="font-semibold">WhatsApp</p>
+                <p className="text-sm text-gray-300">{PHONE}</p>
+              </motion.div>
+            </a>
 
             <a href={LINKEDIN} target="_blank" rel="noopener noreferrer">
               <motion.div

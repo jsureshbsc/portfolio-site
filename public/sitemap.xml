@@ -30,5 +30,9 @@
     <loc>https://jsuresh.netlify.app#contact</loc>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://jsuresh.netlify.app/#chennai-seo</loc>
+    <priority>0.6</priority>
+  </url>
 
 </urlset>
