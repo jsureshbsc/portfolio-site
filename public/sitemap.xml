@@ -2,36 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://jsuresh.netlify.app/</loc>
+    <loc>https://portfolio-site-5o3.pages.dev/</loc>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://jsuresh.netlify.app#about</loc>
+    <loc>https://portfolio-site-5o3.pages.dev/#about</loc>
     <priority>0.8</priority>
   </url>
    <url>
-    <loc>https://jsuresh.netlify.app#projects</loc>
+    <loc>https://portfolio-site-5o3.pages.dev/#projects</loc>
     <priority>0.8</priority>
   </url>
 
  <url>
-    <loc>https://jsuresh.netlify.app#hero</loc>
-    <priority>0.8</priority>
-  </url>
-
-
-  <url>
-    <loc>https://jsuresh.netlify.app#projects</loc>
+    <loc>https://portfolio-site-5o3.pages.dev/#hero</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://jsuresh.netlify.app#contact</loc>
+    <loc>https://portfolio-site-5o3.pages.dev/#contact</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jsuresh.netlify.app/#chennai-seo</loc>
+    <loc>https://portfolio-site-5o3.pages.dev/#chennai-seo</loc>
     <priority>0.6</priority>
   </url>
 
