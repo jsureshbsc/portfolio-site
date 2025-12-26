@@ -130,7 +130,7 @@ const Contact = () => {
   /* ---------------- UI ---------------- */
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <title>Contact – Full Stack Developer | Suresh J</title>
         <meta
           name="description"
@@ -140,7 +140,7 @@ const Contact = () => {
           rel="canonical"
           href="https://portfolio-site-5o3.pages.dev/contact"
         />
-      </Helmet>
+      </Helmet> */}
       <section
         id="contact"
         aria-labelledby="contact-heading"

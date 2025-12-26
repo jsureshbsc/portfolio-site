@@ -68,27 +68,27 @@ function App() {
 
   return (
     <div className="min-h-screen gradient-bg">
-      <Helmet>
-        <Header />
-        <AnimatePresence>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            <Hero />
-            <Services />
-            <Projects />
-            <TechStack />
-            <Contact
-              trackWhatsAppClick={() =>
-                trackWhatsAppClick(window.location.pathname)
-              }
-            />
-            <Footer />
-          </motion.div>
-        </AnimatePresence>
-      </Helmet>
+      {/* <Helmet> */}
+      <Header />
+      <AnimatePresence>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <Hero />
+          <Services />
+          <Projects />
+          <TechStack />
+          <Contact
+            trackWhatsAppClick={() =>
+              trackWhatsAppClick(window.location.pathname)
+            }
+          />
+          <Footer />
+        </motion.div>
+      </AnimatePresence>
+      {/* </Helmet> */}
     </div>
   );
 }

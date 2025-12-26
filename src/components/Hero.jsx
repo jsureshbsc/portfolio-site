@@ -78,7 +78,7 @@ const Hero = () => {
 
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <title>About – Suresh J | Full Stack & AI Chatbot Developer</title>
 
         <meta
@@ -90,7 +90,7 @@ const Hero = () => {
           rel="canonical"
           href="https://portfolio-site-5o3.pages.dev/about"
         />
-      </Helmet>
+      </Helmet> */}
       <section id="home" className="min-h-screen flex items-center pt-20 pb-16">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
