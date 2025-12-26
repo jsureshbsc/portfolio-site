@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 import { motion, AnimatePresence } from "framer-motion";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -41,11 +42,13 @@ function App() {
           const url = new URL(link.href);
           const phone = url.pathname.split("/").pop(); // Extract phone number
           const newText = source === "direct" ? defaultMessage : taggedMessage;
-          
+
           // Update the href with tagged message
-          link.href = `https://wa.me/${phone}?text=${encodeURIComponent(newText)}`;
+          link.href = `https://wa.me/${phone}?text=${encodeURIComponent(
+            newText
+          )}`;
           link.title = `Contact Suresh on WhatsApp (Source: ${source})`;
-          
+
           // Add tracking to existing click handlers
           const originalOnClick = link.onclick;
           link.onclick = (e) => {
@@ -65,21 +68,27 @@ function App() {
 
   return (
     <div className="min-h-screen gradient-bg">
-      <Header />
-      <AnimatePresence>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-        >
-          <Hero />
-          <Services />
-          <Projects />
-          <TechStack />
-          <Contact trackWhatsAppClick={() => trackWhatsAppClick(window.location.pathname)} />
-          <Footer />
-        </motion.div>
-      </AnimatePresence>
+      <Helmet>
+        <Header />
+        <AnimatePresence>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Hero />
+            <Services />
+            <Projects />
+            <TechStack />
+            <Contact
+              trackWhatsAppClick={() =>
+                trackWhatsAppClick(window.location.pathname)
+              }
+            />
+            <Footer />
+          </motion.div>
+        </AnimatePresence>
+      </Helmet>
     </div>
   );
 }

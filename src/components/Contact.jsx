@@ -129,153 +129,169 @@ const Contact = () => {
 
   /* ---------------- UI ---------------- */
   return (
-    <section
-      id="contact"
-      aria-labelledby="contact-heading"
-      className="py-20 bg-gray-900"
-    >
-      <Toaster position="top-right" />
-      <div className="container mx-auto px-4 max-w-6xl">
-        <motion.header
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="text-center mb-14"
-        >
-          <h2
-            id="contact-heading"
-            className="text-4xl md:text-5xl font-bold mb-4"
-          >
-            Let's <span className="text-blue-400">Work Together</span>
-          </h2>
-          <p className="text-gray-300 max-w-2xl mx-auto">
-            Get in touch — your message is securely saved.
-          </p>
-        </motion.header>
-
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Info */}
-          <div className="space-y-6">
-            <motion.button
-              variants={slideLeft}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              onClick={handleEmailClick}
-              className="w-full p-5 glass-effect rounded-xl text-left"
-              aria-label="Send email"
-            >
-              <Mail aria-hidden className="w-6 h-6 text-white mb-2" />
-              <p className="font-semibold">Email</p>
-              <p className="text-sm text-gray-300">{EMAIL}</p>
-            </motion.button>
-
-            <a href={`tel:${PHONE.replace(/\s/g, "")}`}>
-              <motion.div
-                variants={slideLeft}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                className="p-5 glass-effect rounded-xl"
-              >
-                <Phone aria-hidden className="w-6 h-6 text-white mb-2" />
-                <p className="font-semibold">Phone</p>
-                <p className="text-sm text-gray-300">{PHONE}</p>
-              </motion.div>
-            </a>
-            <a
-              href="https://wa.me/916369263611?text=Hi%20Suresh%2C%20I%20need%20a%20website"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="whatsapp-button" 
-            >
-              <motion.div
-                variants={slideLeft}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                className="p-5 glass-effect rounded-xl"
-              >
-                {" "}
-                <MessageCircle aria-hidden className="w-6 h-6 text-white mb-2" />
-                <p className="font-semibold">WhatsApp</p>
-                <p className="text-sm text-gray-300">{PHONE}</p>
-              </motion.div>
-            </a>
-
-            <a href={LINKEDIN} target="_blank" rel="noopener noreferrer">
-              <motion.div
-                variants={slideLeft}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                className="p-5 glass-effect rounded-xl"
-              >
-                <Linkedin aria-hidden className="w-6 h-6 text-white mb-2" />
-                <p className="font-semibold">LinkedIn</p>
-                <p className="text-sm text-gray-300">View Profile</p>
-              </motion.div>
-            </a>
-          </div>
-
-          {/* Form */}
-          <motion.form
+    <>
+      <Helmet>
+        <title>Contact – Full Stack Developer | Suresh J</title>
+        <meta
+          name="description"
+          content="Contact Suresh J for web development, AI chatbot development, and automation projects. Available for freelancing and full-time opportunities."
+        />
+        <link
+          rel="canonical"
+          href="https://portfolio-site-5o3.pages.dev/contact"
+        />
+      </Helmet>
+      <section
+        id="contact"
+        aria-labelledby="contact-heading"
+        className="py-20 bg-gray-900"
+      >
+        <Toaster position="top-right" />
+        <div className="container mx-auto px-4 max-w-6xl">
+          <motion.header
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            onSubmit={handleSubmit}
-            className="glass-effect rounded-2xl p-6 space-y-5"
+            className="text-center mb-14"
           >
-            <input
-              name="botField"
-              value={formData.botField}
-              onChange={handleChange}
-              className="hidden"
-              tabIndex="-1"
-              autoComplete="off"
-            />
-
-            {["name", "phoneNo", "email", "subject"].map((field) => (
-              <input
-                key={field}
-                name={field}
-                required
-                value={formData[field]}
-                onChange={handleChange}
-                placeholder={field.replace(/No/, " Number")}
-                className="w-full px-4 py-3 rounded-lg bg-gray-800/50 border border-gray-700 text-white"
-              />
-            ))}
-
-            <textarea
-              name="message"
-              rows="4"
-              required
-              value={formData.message}
-              onChange={handleChange}
-              placeholder="Tell me about your project"
-              className="w-full px-4 py-3 rounded-lg bg-gray-800/50 border border-gray-700 text-white resize-none"
-            />
-
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-semibold text-white flex justify-center items-center gap-2"
+            <h2
+              id="contact-heading"
+              className="text-4xl md:text-5xl font-bold mb-4"
             >
-              {isSubmitting ? (
-                "Sending..."
-              ) : (
-                <>
-                  <MessageCircle /> Send Message
-                </>
-              )}
-            </button>
-          </motion.form>
+              Let's <span className="text-blue-400">Work Together</span>
+            </h2>
+            <p className="text-gray-300 max-w-2xl mx-auto">
+              Get in touch — your message is securely saved.
+            </p>
+          </motion.header>
+
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Contact Info */}
+            <div className="space-y-6">
+              <motion.button
+                variants={slideLeft}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                onClick={handleEmailClick}
+                className="w-full p-5 glass-effect rounded-xl text-left"
+                aria-label="Send email"
+              >
+                <Mail aria-hidden className="w-6 h-6 text-white mb-2" />
+                <p className="font-semibold">Email</p>
+                <p className="text-sm text-gray-300">{EMAIL}</p>
+              </motion.button>
+
+              <a href={`tel:${PHONE.replace(/\s/g, "")}`}>
+                <motion.div
+                  variants={slideLeft}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  className="p-5 glass-effect rounded-xl"
+                >
+                  <Phone aria-hidden className="w-6 h-6 text-white mb-2" />
+                  <p className="font-semibold">Phone</p>
+                  <p className="text-sm text-gray-300">{PHONE}</p>
+                </motion.div>
+              </a>
+              <a
+                href="https://wa.me/916369263611?text=Hi%20Suresh%2C%20I%20need%20a%20website"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="whatsapp-button"
+              >
+                <motion.div
+                  variants={slideLeft}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  className="p-5 glass-effect rounded-xl"
+                >
+                  {" "}
+                  <MessageCircle
+                    aria-hidden
+                    className="w-6 h-6 text-white mb-2"
+                  />
+                  <p className="font-semibold">WhatsApp</p>
+                  <p className="text-sm text-gray-300">{PHONE}</p>
+                </motion.div>
+              </a>
+
+              <a href={LINKEDIN} target="_blank" rel="noopener noreferrer">
+                <motion.div
+                  variants={slideLeft}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  className="p-5 glass-effect rounded-xl"
+                >
+                  <Linkedin aria-hidden className="w-6 h-6 text-white mb-2" />
+                  <p className="font-semibold">LinkedIn</p>
+                  <p className="text-sm text-gray-300">View Profile</p>
+                </motion.div>
+              </a>
+            </div>
+
+            {/* Form */}
+            <motion.form
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              onSubmit={handleSubmit}
+              className="glass-effect rounded-2xl p-6 space-y-5"
+            >
+              <input
+                name="botField"
+                value={formData.botField}
+                onChange={handleChange}
+                className="hidden"
+                tabIndex="-1"
+                autoComplete="off"
+              />
+
+              {["name", "phoneNo", "email", "subject"].map((field) => (
+                <input
+                  key={field}
+                  name={field}
+                  required
+                  value={formData[field]}
+                  onChange={handleChange}
+                  placeholder={field.replace(/No/, " Number")}
+                  className="w-full px-4 py-3 rounded-lg bg-gray-800/50 border border-gray-700 text-white"
+                />
+              ))}
+
+              <textarea
+                name="message"
+                rows="4"
+                required
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Tell me about your project"
+                className="w-full px-4 py-3 rounded-lg bg-gray-800/50 border border-gray-700 text-white resize-none"
+              />
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-semibold text-white flex justify-center items-center gap-2"
+              >
+                {isSubmitting ? (
+                  "Sending..."
+                ) : (
+                  <>
+                    <MessageCircle /> Send Message
+                  </>
+                )}
+              </button>
+            </motion.form>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
